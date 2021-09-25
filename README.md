@@ -2,8 +2,9 @@
 In order to create a new marker processor, either clone this project or use **Marker CLI**.
 
 The simple rules that you need to follow if you create a new marker processor by cloning this repository are:
-* **processor-name** directory must be renamed with your marker name.
-* **AppName** constant value should be replaced with your marker name. 
+* Rename **processor-name** directory with your marker name.
+* Replace **AppName** constant value with your marker name. 
+* Replace **Module Name** in go.mod file with your module name.
 ## Marker CLI Installation
 You can install Marker CLI by using the following command.
 
