@@ -17,5 +17,5 @@ package main
 
 const (
 	AppName    = "app name goes here"
-	AppVersion = "app version goes here"
+	AppVersion = "1.0.0"
 )

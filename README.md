@@ -1,6 +1,9 @@
 # marker-processor-template
 In order to create a new marker processor, either clone this project or use **Marker CLI**.
 
+The simple rules that you need to follow if you create a new marker processor by cloning this repository are:
+* **processor-name** directory must be renamed with your marker name.
+* **AppName** constant value should be replaced with your marker name. 
 ## Marker CLI Installation
 You can install Marker CLI by using the following command.
 
