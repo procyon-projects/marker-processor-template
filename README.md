@@ -1,9 +1,22 @@
 # marker-processor-template
+
+Marker Processors are just simple CLI applications run by **Marker CLI Application** to process custom markers and generate code.  
+
+Processors need to have the following commands:
+
+* `processor-name generate --path [path] --output [output-path] --args [args]`
+  
+  (**path:** directories separated by comma value, **output:** output directory path, **args:** optional)
+* `processor-name validate --args [args]`
+  
+  (**args:** optional)
+
 In order to create a new marker processor, either clone this project or use **Marker CLI**.
 
-The simple rules that you need to follow if you create a new marker processor by cloning this repository are:
-* **processor-name** directory must be renamed with your marker name.
-* **AppName** constant value should be replaced with your marker name. 
+The simple rules that you need to follow to create a new marker processor by cloning this repository are:
+* Rename **processor-name** directory with your marker name.
+* Replace **AppName** constant value with your marker name. 
+* Replace **Module Name** in go.mod file with your module name.
 ## Marker CLI Installation
 You can install Marker CLI by using the following command.
 
