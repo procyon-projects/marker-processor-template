@@ -27,7 +27,7 @@ go get -u github.com/procyon-projects/marker/...
 Then use the following command to initialize a new marker processor project.
 
 ```shell
-marker init [name] [module]
+marker init [name] -m [module]
 ```
 
 ## How to develop a new marker processor
