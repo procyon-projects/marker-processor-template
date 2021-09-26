@@ -1,4 +1,4 @@
-module github.com/procyon-projects/marker-processor-template
+module $MODULE_NAME
 
 go 1.13
 
