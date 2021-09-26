@@ -1,4 +1,14 @@
 # marker-processor-template
+
+Marker Processors are just simple CLI applications run by **Marker CLI Application** to process custom markers and generate code.  
+
+Processors need to have the following commands:
+
+* `processor-name generate --path [path] --output [output-path] --args [args]`
+  
+  (**path:** directories separated by comma value, **output:** output directory path, **args:** optional)
+* `processor-name validate --args [args]` (**Args is optional**)
+
 In order to create a new marker processor, either clone this project or use **Marker CLI**.
 
 The simple rules that you need to follow to create a new marker processor by cloning this repository are:
