@@ -7,7 +7,9 @@ Processors need to have the following commands:
 * `processor-name generate --path [path] --output [output-path] --args [args]`
   
   (**path:** directories separated by comma value, **output:** output directory path, **args:** optional)
-* `processor-name validate --args [args]` (**Args is optional**)
+* `processor-name validate --args [args]`
+  
+  (**args:** optional)
 
 In order to create a new marker processor, either clone this project or use **Marker CLI**.
 
