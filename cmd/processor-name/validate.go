@@ -35,7 +35,7 @@ var validateCmd = &cobra.Command{
 		packages, err := marker.LoadPackages(validatePaths...)
 
 		if err != nil {
-			log.Println(err)
+			log.Errorln(err)
 			return
 		}
 
@@ -43,7 +43,7 @@ var validateCmd = &cobra.Command{
 		err = RegisterDefinitions(registry)
 
 		if err != nil {
-			log.Println(err)
+			log.Errorln(err)
 			return
 		}
 
@@ -58,7 +58,7 @@ var validateCmd = &cobra.Command{
 				return
 			}
 
-			log.Println(err)
+			log.Errorln(err)
 			return
 		}
 	},

@@ -33,7 +33,7 @@ var generateCmd = &cobra.Command{
 		packages, err := marker.LoadPackages(paths...)
 
 		if err != nil {
-			log.Println(err)
+			log.Errorln(err)
 			return
 		}
 
@@ -41,7 +41,7 @@ var generateCmd = &cobra.Command{
 		err = RegisterDefinitions(registry)
 
 		if err != nil {
-			log.Println(err)
+			log.Errorln(err)
 			return
 		}
 
@@ -56,13 +56,13 @@ var generateCmd = &cobra.Command{
 				return
 			}
 
-			log.Println(err)
+			log.Errorln(err)
 			return
 		}
 
 		err = ProcessMarkers(collector, packages)
 		if err != nil {
-			log.Println(err)
+			log.Errorln(err)
 		}
 	},
 }
