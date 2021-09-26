@@ -21,16 +21,18 @@ import (
 	"log"
 )
 
-var paths []string
-var outputPath string
-var options []string
+var (
+	validatePaths 		[]string
+	validateArgs 		[]string
+	validationErrors 	[]error
+)
 
-var generateCmd = &cobra.Command{
-	Use:   "generate",
-	Short: "Generate Go files by processing markers",
-	Long:  `The generate command helps your code generation process by processing markers`,
+var validateCmd = &cobra.Command{
+	Use:   "validate",
+	Short: "Validate markers' syntax and arguments",
+	Long:  `The validate command helps you validate markers' syntax and arguments'`,
 	Run: func(cmd *cobra.Command, args []string) {
-		packages, err := marker.LoadPackages(paths...)
+		packages, err := marker.LoadPackages(validatePaths...)
 
 		if err != nil {
 			log.Println(err)
@@ -59,30 +61,18 @@ var generateCmd = &cobra.Command{
 			log.Println(err)
 			return
 		}
-
-		err = ProcessMarkers(collector, packages)
-		if err != nil {
-			log.Println(err)
-		}
 	},
 }
 
 func init() {
-	rootCmd.AddCommand(generateCmd)
+	rootCmd.AddCommand(validateCmd)
 
-	generateCmd.Flags().StringSliceVarP(&paths, "path", "p", paths, "path(s) separated by comma")
-	err := generateCmd.MarkFlagRequired("path")
-
-	if err != nil {
-		panic(err)
-	}
-
-	generateCmd.Flags().StringVarP(&outputPath, "output", "o", "", "output path")
-	err = generateCmd.MarkFlagRequired("output")
+	validateCmd.Flags().StringSliceVarP(&validatePaths, "path", "p", validatePaths, "path(s) separated by comma")
+	err := validateCmd.MarkFlagRequired("path")
 
 	if err != nil {
 		panic(err)
 	}
 
-	generateCmd.Flags().StringSliceVarP(&options, "args", "a", options, "extra arguments for marker processors (key-value separated by comma)")
+	validateCmd.Flags().StringSliceVarP(&validateArgs, "args", "a", validateArgs, "extra arguments for marker processors (key-value separated by comma)")
 }
